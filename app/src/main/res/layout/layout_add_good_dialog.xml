@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorSelectedText"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:theme="@style/Theme.Design.Light">
+
+    <TextView
+        android:id="@+id/textViewAddGoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAddGoodLabelWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/measure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewAddGoodName" />
+
+    <TextView
+        android:id="@+id/textViewAddGoodQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="@string/quantityForOne"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAddGoodLabelWeight"
+        app:layout_constraintTop_toTopOf="@+id/textViewAddGoodName" />
+
+    <TextView
+        android:id="@+id/textViewAddGoodDelemiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/delemiter"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAddGoodQuantity"
+        app:layout_constraintTop_toTopOf="@+id/textViewAddGoodName" />
+
+    <TextView
+        android:id="@+id/textViewAddGoodCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/currency"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAddGoodDelemiter"
+        app:layout_constraintTop_toTopOf="@+id/textViewAddGoodName" />
+
+    <TextView
+        android:id="@+id/textViewAddGoodTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAddGoodCurrency"
+        app:layout_constraintTop_toTopOf="@+id/textViewAddGoodName" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddGoodName"
+        app:suffixText=" КГ">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <Button
+            android:id="@+id/buttonAddGood1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/buttonAddGood2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/buttonAddGood3"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/buttonAddGood4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/buttonAddGood5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/buttonAddGood6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/buttonAddGood7"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/buttonAddGood8"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/buttonAddGood9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/buttonAddGoodDot"
+            android:text="," />
+
+        <Button
+            android:id="@+id/buttonAddGood0"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/buttonAddGoodBackSpace"
+            android:text="X" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/buttonAddGoodAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+    <Button
+        android:id="@+id/buttonAddGoodCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddGoodAdd"
+        app:layout_constraintTop_toTopOf="@+id/buttonAddGoodAdd" />
+</androidx.constraintlayout.widget.ConstraintLayout>

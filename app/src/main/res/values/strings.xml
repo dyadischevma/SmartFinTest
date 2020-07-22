@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">SmartFinTest</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Mikhail Dyadischev</string>
+    <string name="nav_header_subtitle">dyadischevma@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_goods">Товары</string>
+    <string name="menu_history">История</string>
+    <string name="menu_reports">Отчеты</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_support">Поддержка</string>
+
+    <string name="currency">₽</string>
+    <string name="receiptPay">Оплатить</string>
+    <string name="receiptNoGoods">ТОВАРОВ НЕТ</string>
+    <string name="receiptNoGoodsSmall">Добавьте товары из каталога, а затем выберете способ оплаты</string>
+    <string name="receiptTotal">Итого:</string>
+    <string name="receiptClearAll">Очистить всё</string>
+    <string name="measure">КГ</string>
+    <string name="quantityForOne">1.0</string>
+    <string name="delemiter">/</string>
+    <string name="add">Добавить</string>
+    <string name="cancel">Отменить</string>
+    <string name="measureMultiple">КГ х</string>
+    <string name="oneItemMeasureMultiple">1 КГ х</string>
+    <string name="initReceiptTotalValue">0,00</string>
+</resources>
