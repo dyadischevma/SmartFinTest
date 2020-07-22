@@ -13,9 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
-import ru.dyadischevma.smartfintest.data.Country;
-import ru.dyadischevma.smartfintest.data.DataRepository;
+import ru.dyadischevma.smartfintest.data.enums.Country;
+import ru.dyadischevma.smartfintest.data.repositories.DataRepository;
 import ru.dyadischevma.smartfintest.data.entity.Good;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
+                .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         compositeDisposable.add(dataRepository.insertItem(new Good("Морковь", Country.RUSSIA, 2500L)).subscribe(System.out::println));
         compositeDisposable.add(dataRepository.insertItem(new Good("Картофель", Country.BELORUS, 5300L)).subscribe(System.out::println));
         compositeDisposable.add(dataRepository.insertItem(new Good("Чеснок", Country.BELORUS, 25000L)).subscribe(System.out::println));

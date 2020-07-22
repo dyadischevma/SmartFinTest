@@ -1,6 +1,7 @@
 package ru.dyadischevma.smartfintest.ui.tabs;
 
 import android.app.Application;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.dyadischevma.smartfintest.R;
-import ru.dyadischevma.smartfintest.data.DataRepository;
+import ru.dyadischevma.smartfintest.data.repositories.DataRepository;
 import ru.dyadischevma.smartfintest.data.entity.Good;
 import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
 
@@ -107,9 +108,12 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
                 });
 
                 textInputEditText.setOnEditorActionListener((v12, actionId, event) -> {
-                    String value = textInputEditText.getText().toString();
-                    textViewAddGoodQuantity.setText(value);
-                    textViewAddGoodTotalPrice.setText(df.format(good.getPrice() * Double.parseDouble(value) / 100));
+                    Editable editable = textInputEditText.getText();
+                    if (editable != null) {
+                        String value = editable.toString();
+                        textViewAddGoodQuantity.setText(value);
+                        textViewAddGoodTotalPrice.setText(df.format(good.getPrice() * Double.parseDouble(value) / 100));
+                    }
                     return false;
                 });
 
@@ -118,13 +122,17 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
 
                 buttonCancel.setOnClickListener(v1 -> dialog.cancel());
                 buttonAdd.setOnClickListener(v1 -> {
-                    double quantity = Double.parseDouble(textInputEditText.getText().toString());
+                    Editable editable = textInputEditText.getText();
+                    if (editable != null) {
+                        double quantity = Double.parseDouble(editable.toString());
 
-                    ArrayList<ReceiptItem> currentReceipt =
-                            DataRepository.getDataRepository((Application) view.getContext().getApplicationContext()).getReceipt().getValue();
-                    currentReceipt.add(new ReceiptItem(good, quantity));
-                    DataRepository.getDataRepository((Application) view.getContext().getApplicationContext()).setReceipt(currentReceipt);
-
+                        ArrayList<ReceiptItem> currentReceipt =
+                                DataRepository.getDataRepository((Application) view.getContext().getApplicationContext()).getReceipt().getValue();
+                        if (currentReceipt != null) {
+                            currentReceipt.add(new ReceiptItem(good, quantity));
+                            DataRepository.getDataRepository((Application) view.getContext().getApplicationContext()).setReceipt(currentReceipt);
+                        }
+                    }
                     dialog.cancel();
                 });
 
@@ -132,10 +140,13 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
         }
 
         private void addText(TextInputEditText textInputEditText, String text) {
-            if (textInputEditText.getText() != null && textInputEditText.getText().toString().equals("0")) {
-                textInputEditText.getText().clear();
+            Editable editable = textInputEditText.getText();
+            if (editable != null) {
+                if (textInputEditText.getText().toString().equals("0")) {
+                    textInputEditText.getText().clear();
+                }
+                editable.append(text);
             }
-            textInputEditText.getText().append(text);
         }
     }
 }

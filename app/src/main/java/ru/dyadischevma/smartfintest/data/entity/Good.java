@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
-import ru.dyadischevma.smartfintest.data.Country;
+import ru.dyadischevma.smartfintest.data.enums.Country;
 
 @Entity
 public class Good {

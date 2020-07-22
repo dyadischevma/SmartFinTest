@@ -1,8 +1,8 @@
-package ru.dyadischevma.smartfintest.data;
+package ru.dyadischevma.smartfintest.data.converters;
 
 import androidx.room.TypeConverter;
 
-import java.util.UUID;
+import ru.dyadischevma.smartfintest.data.enums.Country;
 
 public class Converters {
     @TypeConverter

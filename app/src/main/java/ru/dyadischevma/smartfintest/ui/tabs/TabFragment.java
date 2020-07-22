@@ -1,7 +1,6 @@
 package ru.dyadischevma.smartfintest.ui.tabs;
 
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 
@@ -20,7 +19,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.dyadischevma.smartfintest.data.Country;
+import ru.dyadischevma.smartfintest.data.enums.Country;
 import ru.dyadischevma.smartfintest.data.entity.Good;
 import ru.dyadischevma.smartfintest.R;
 
@@ -57,7 +56,7 @@ public class TabFragment extends Fragment {
         }
         RecyclerView.LayoutManager manager = new GridLayoutManager(getContext(), 5);
         recyclerView.setLayoutManager(manager);
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(view.getContext(), LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(goodsAdapter);
 
         return view;

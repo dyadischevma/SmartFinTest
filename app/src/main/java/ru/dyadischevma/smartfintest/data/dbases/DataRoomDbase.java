@@ -1,4 +1,4 @@
-package ru.dyadischevma.smartfintest.data;
+package ru.dyadischevma.smartfintest.data.dbases;
 
 import android.content.Context;
 
@@ -7,6 +7,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
+import ru.dyadischevma.smartfintest.data.converters.Converters;
+import ru.dyadischevma.smartfintest.data.dao.DataDAO;
 import ru.dyadischevma.smartfintest.data.entity.Good;
 
 @Database(entities = {Good.class}, version = 1, exportSchema = false)

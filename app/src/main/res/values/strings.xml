@@ -27,4 +27,5 @@
     <string name="measureMultiple">КГ х</string>
     <string name="oneItemMeasureMultiple">1 КГ х</string>
     <string name="initReceiptTotalValue">0,00</string>
+    <string name="exit">ВЫЙТИ</string>
 </resources>

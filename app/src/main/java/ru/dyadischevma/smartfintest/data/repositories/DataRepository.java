@@ -1,4 +1,4 @@
-package ru.dyadischevma.smartfintest.data;
+package ru.dyadischevma.smartfintest.data.repositories;
 
 import android.app.Application;
 
@@ -6,13 +6,14 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import ru.dyadischevma.smartfintest.data.dbases.DataRoomDbase;
+import ru.dyadischevma.smartfintest.data.dao.DataDAO;
 import ru.dyadischevma.smartfintest.data.entity.Good;
 import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
 

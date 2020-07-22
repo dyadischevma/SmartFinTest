@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.ArrayList;
 
-import ru.dyadischevma.smartfintest.data.DataRepository;
+import ru.dyadischevma.smartfintest.data.repositories.DataRepository;
 import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
 
 public class ReceiptViewModel extends AndroidViewModel {

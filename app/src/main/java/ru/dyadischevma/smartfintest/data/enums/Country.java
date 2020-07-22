@@ -1,4 +1,4 @@
-package ru.dyadischevma.smartfintest.data;
+package ru.dyadischevma.smartfintest.data.enums;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;

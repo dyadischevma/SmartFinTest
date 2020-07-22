@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -16,7 +17,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 
 import ru.dyadischevma.smartfintest.R;
-import ru.dyadischevma.smartfintest.data.Country;
+import ru.dyadischevma.smartfintest.data.enums.Country;
 import ru.dyadischevma.smartfintest.ui.tabs.ViewPagerAdapter;
 
 public class GoodsFragment extends Fragment {
@@ -39,8 +40,8 @@ public class GoodsFragment extends Fragment {
 
         TabLayout tabLayout = view.findViewById(R.id.tab_layout);
         tabLayout.setTabTextColors(
-                getResources().getColor(R.color.colorText),
-                getResources().getColor(R.color.colorSelectedText)
+                ContextCompat.getColor(view.getContext(), R.color.colorText),
+                ContextCompat.getColor(view.getContext(), R.color.colorSelectedText)
         );
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> tab.setText(tabs.get(position))

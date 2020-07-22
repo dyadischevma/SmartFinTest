@@ -8,8 +8,8 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import ru.dyadischevma.smartfintest.data.Country;
-import ru.dyadischevma.smartfintest.data.DataRepository;
+import ru.dyadischevma.smartfintest.data.enums.Country;
+import ru.dyadischevma.smartfintest.data.repositories.DataRepository;
 import ru.dyadischevma.smartfintest.data.entity.Good;
 
 public class TabViewModel extends AndroidViewModel {

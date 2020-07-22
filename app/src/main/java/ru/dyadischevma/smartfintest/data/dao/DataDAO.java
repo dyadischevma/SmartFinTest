@@ -1,4 +1,4 @@
-package ru.dyadischevma.smartfintest.data;
+package ru.dyadischevma.smartfintest.data.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
