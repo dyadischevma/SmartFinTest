@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="?attr/colorPrimary"
-    tools:context=".ui.home.GoodsFragment">
+    tools:context=".ui.GoodsFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"

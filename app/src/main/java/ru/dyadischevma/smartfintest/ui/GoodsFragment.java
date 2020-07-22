@@ -1,4 +1,4 @@
-package ru.dyadischevma.smartfintest.ui.home;
+package ru.dyadischevma.smartfintest.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -19,7 +17,7 @@ import java.util.ArrayList;
 
 import ru.dyadischevma.smartfintest.R;
 import ru.dyadischevma.smartfintest.data.Country;
-import ru.dyadischevma.smartfintest.ui.home.tabs.ViewPagerAdapter;
+import ru.dyadischevma.smartfintest.ui.tabs.ViewPagerAdapter;
 
 public class GoodsFragment extends Fragment {
     ViewPagerAdapter viewPagerAdapter;

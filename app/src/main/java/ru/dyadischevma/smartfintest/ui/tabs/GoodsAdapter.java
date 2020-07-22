@@ -1,4 +1,4 @@
-package ru.dyadischevma.smartfintest.ui.home.tabs;
+package ru.dyadischevma.smartfintest.ui.tabs;
 
 import android.app.Application;
 import android.view.LayoutInflater;

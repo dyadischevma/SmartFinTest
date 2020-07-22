@@ -1,9 +1,8 @@
-package ru.dyadischevma.smartfintest.ui.home.receipt;
+package ru.dyadischevma.smartfintest.ui.receipt;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.dyadischevma.smartfintest.R;
-import ru.dyadischevma.smartfintest.data.entity.Good;
 import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
 
 public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.MyViewHolder> {

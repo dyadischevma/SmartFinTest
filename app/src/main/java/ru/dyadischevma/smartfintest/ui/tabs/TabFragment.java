@@ -1,5 +1,6 @@
-package ru.dyadischevma.smartfintest.ui.home.tabs;
+package ru.dyadischevma.smartfintest.ui.tabs;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -72,7 +73,7 @@ public class TabFragment extends Fragment {
             countryName = Country.ALL.name;
         }
 
-        mViewModel = ViewModelProviders.of(this).get(TabViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(TabViewModel.class);
         mViewModel.getData(countryName).observe(getViewLifecycleOwner(), dataItems ->
         {
             if (dataItems != null) {

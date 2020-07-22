@@ -1,5 +1,6 @@
-package ru.dyadischevma.smartfintest.ui.home.receipt;
+package ru.dyadischevma.smartfintest.ui.receipt;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -7,8 +8,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,13 +18,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import ru.dyadischevma.smartfintest.R;
 import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
-import ru.dyadischevma.smartfintest.ui.home.tabs.GoodsAdapter;
 
 public class ReceiptFragment extends Fragment {
 
@@ -75,7 +72,7 @@ public class ReceiptFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(ReceiptViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(ReceiptViewModel.class);
         mViewModel.getData().observe(getViewLifecycleOwner(), dataItems ->
         {
             if (dataItems != null) {
@@ -117,5 +114,4 @@ public class ReceiptFragment extends Fragment {
             buttonReceiptPay.setEnabled(true);
         }
     }
-
 }

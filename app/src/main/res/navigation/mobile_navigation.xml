@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="ru.dyadischevma.smartfintest.ui.home.GoodsFragment"
+        android:name="ru.dyadischevma.smartfintest.ui.GoodsFragment"
         android:label="@string/menu_goods"
         tools:layout="@layout/fragment_goods" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="ru.dyadischevma.smartfintest.ui.home.GoodsFragment"
+        android:name="ru.dyadischevma.smartfintest.ui.GoodsFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_goods" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="ru.dyadischevma.smartfintest.ui.home.GoodsFragment"
+        android:name="ru.dyadischevma.smartfintest.ui.GoodsFragment"
         android:label="@string/menu_reports"
         tools:layout="@layout/fragment_goods" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="ru.dyadischevma.smartfintest.ui.home.GoodsFragment"
+        android:name="ru.dyadischevma.smartfintest.ui.GoodsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_goods" />
 
     <fragment
         android:id="@+id/nav_support"
-        android:name="ru.dyadischevma.smartfintest.ui.home.GoodsFragment"
+        android:name="ru.dyadischevma.smartfintest.ui.GoodsFragment"
         android:label="@string/menu_support"
         tools:layout="@layout/fragment_goods" />
 </navigation>
