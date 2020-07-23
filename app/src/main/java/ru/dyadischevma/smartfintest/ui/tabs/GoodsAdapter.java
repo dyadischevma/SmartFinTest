@@ -20,6 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import ru.dyadischevma.smartfintest.R;
 import ru.dyadischevma.smartfintest.data.repositories.DataRepository;
@@ -108,7 +109,11 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
                 customLayout.findViewById(R.id.buttonAddGood7).setOnClickListener(v14 -> addText(textInputEditText, "7"));
                 customLayout.findViewById(R.id.buttonAddGood8).setOnClickListener(v14 -> addText(textInputEditText, "8"));
                 customLayout.findViewById(R.id.buttonAddGood9).setOnClickListener(v14 -> addText(textInputEditText, "9"));
-                customLayout.findViewById(R.id.buttonAddGoodDot).setOnClickListener(v14 -> textInputEditText.append("."));
+                customLayout.findViewById(R.id.buttonAddGoodDot).setOnClickListener(v14 -> {
+                    if (textInputEditText.getText() != null && !textInputEditText.getText().toString().contains(".")) {
+                        textInputEditText.append(".");
+                    }
+                });
                 customLayout.findViewById(R.id.buttonAddGoodBackSpace).setOnClickListener(v15 -> {
                     if (textInputEditText.getText() == null || textInputEditText.getText().length() == 1) {
                         textInputEditText.setText("0");
@@ -154,7 +159,10 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
                 if (textInputEditText.getText().toString().equals("0")) {
                     textInputEditText.getText().clear();
                 }
-                editable.append(text);
+                String[] currentText = editable.toString().split(Pattern.quote("."));
+                if (currentText.length < 2 || (currentText.length == 2 && currentText[1].length() < 2)) {
+                    editable.append(text);
+                }
             }
         }
     }
