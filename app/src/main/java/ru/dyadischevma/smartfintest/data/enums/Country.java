@@ -1,19 +1,23 @@
 package ru.dyadischevma.smartfintest.data.enums;
 
+import android.graphics.Color;
+
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public enum Country {
-    ALL(0, "Все"),
-    RUSSIA(1, "Россия"),
-    BELORUS(2, "Белорусь");
+    ALL(0, "Все", Color.WHITE),
+    RUSSIA(1, "Россия", Color.MAGENTA),
+    BELORUS(2, "Белорусь", Color.GREEN);
 
     public final int position;
     public final String name;
+    public final int color;
 
-    Country(int position, String name) {
+    Country(int position, String name, int color) {
         this.position = position;
         this.name = name;
+        this.color = color;
     }
 
     public static Country fromString(String countryName) {

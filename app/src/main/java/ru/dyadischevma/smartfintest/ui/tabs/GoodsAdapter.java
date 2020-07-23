@@ -53,6 +53,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(goodsList.get(position).getName());
         holder.good = goodsList.get(position);
+        holder.viewGoodColor.setBackgroundColor(goodsList.get(position).getCountry().color);
         Picasso.with(context).load(holder.good.getLink()).error(R.drawable.basket).into(holder.imageView);
     }
 
@@ -62,16 +63,20 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
+        View view;
         TextView name;
         ImageView imageView;
-        View view;
+        View viewGoodColor;
+
         Good good;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            view = itemView;
+
             name = itemView.findViewById(R.id.textViewGoodName);
             imageView = itemView.findViewById(R.id.imageViewGood);
-            view = itemView;
+            viewGoodColor = itemView.findViewById(R.id.viewGoodColor);
 
             view.setOnClickListener(v -> {
                 DecimalFormat df = new DecimalFormat("0.00##");
@@ -140,7 +145,6 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
                     }
                     dialog.cancel();
                 });
-
             });
         }
 
