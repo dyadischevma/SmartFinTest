@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import ru.dyadischevma.smartfintest.data.enums.Country;
+
 public class ViewPagerAdapter extends FragmentStateAdapter {
     public ViewPagerAdapter(Fragment fragment) {
         super(fragment);
@@ -17,6 +19,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return Country.getCountryNames().size();
     }
 }

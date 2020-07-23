@@ -26,10 +26,11 @@ public class Good {
     }
 
     @Ignore
-    public Good(String name, Country country, Long price) {
+    public Good(String name, Country country, Long price, String link) {
         this.name = name;
         this.country = country;
         this.price = price;
+        this.link = link;
     }
 
     public long getId() {

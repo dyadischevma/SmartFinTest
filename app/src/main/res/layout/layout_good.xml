@@ -13,11 +13,11 @@
 
     <ImageView
         android:id="@+id/imageViewGood"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/carrot" />
+        app:srcCompat="@drawable/basket" />
 
     <TextView
         android:id="@+id/textViewGoodName"

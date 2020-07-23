@@ -1,6 +1,7 @@
 package ru.dyadischevma.smartfintest.ui.tabs;
 
 import android.app.Application;
+import android.content.Context;
 import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
 public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder> {
 
     List<Good> goodsList;
+    Context context;
 
     public void setListData(List<Good> dataItemList) {
         if (goodsList == null) {
@@ -42,6 +45,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.layout_good, parent, false);
+        context = parent.getContext();
         return new MyViewHolder(itemView);
     }
 
@@ -49,6 +53,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(goodsList.get(position).getName());
         holder.good = goodsList.get(position);
+        Picasso.with(context).load(holder.good.getLink()).error(R.drawable.basket).into(holder.imageView);
     }
 
     @Override
