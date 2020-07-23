@@ -13,8 +13,6 @@ import ru.dyadischevma.smartfintest.data.repositories.DataRepository;
 import ru.dyadischevma.smartfintest.data.entity.Good;
 
 public class TabViewModel extends AndroidViewModel {
-
-    private LiveData<List<Good>> data;
     private DataRepository dataRepository;
 
     public TabViewModel(@NonNull Application application) {
@@ -24,10 +22,9 @@ public class TabViewModel extends AndroidViewModel {
 
     public LiveData<List<Good>> getData(String countryName) {
         if (countryName.equals(Country.ALL.name)) {
-            data = dataRepository.getAllGoods();
+            return dataRepository.getAllGoods();
         } else {
-            data = dataRepository.getGoods(countryName);
+            return dataRepository.getGoods(countryName);
         }
-        return data;
     }
 }

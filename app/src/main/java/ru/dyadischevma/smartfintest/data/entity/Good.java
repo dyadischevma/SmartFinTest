@@ -12,10 +12,10 @@ import ru.dyadischevma.smartfintest.data.enums.Country;
 public class Good {
     @PrimaryKey(autoGenerate = true)
     private long id;
-    String name;
-    Country country;
-    Long price;
-    String link;
+    private final String name;
+    private final Country country;
+    private final Long price;
+    private final String link;
 
     public Good(long id, String name, Country country, Long price, String link) {
         this.id = id;

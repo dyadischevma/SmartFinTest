@@ -1,9 +1,9 @@
 package ru.dyadischevma.smartfintest.data.entity;
 
 public class ReceiptItem {
-    final Good good;
-    final double quantity;
-    final double totalPrice;
+    private final Good good;
+    private final double quantity;
+    private final double totalPrice;
 
     public ReceiptItem(Good good, double quantity) {
         this.good = good;

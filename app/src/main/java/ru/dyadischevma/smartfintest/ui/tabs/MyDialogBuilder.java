@@ -19,7 +19,7 @@ import ru.dyadischevma.smartfintest.data.entity.Good;
 
 public class MyDialogBuilder extends AlertDialog.Builder {
     private final DecimalFormat df = new DecimalFormat("0.00##");
-    private final View customLayout;
+
     private final TextInputEditText textInputEditText;
     private final Button buttonAdd;
     private final Button buttonCancel;
@@ -27,7 +27,7 @@ public class MyDialogBuilder extends AlertDialog.Builder {
     public MyDialogBuilder(Good good, Context context) {
         super(context);
 
-        customLayout = LayoutInflater.from(context).inflate(R.layout.layout_add_good_dialog, null);
+        View customLayout = LayoutInflater.from(context).inflate(R.layout.layout_add_good_dialog, null);
         this.setView(customLayout);
 
         TextView textViewAddGoodName = customLayout.findViewById(R.id.textViewAddGoodName);

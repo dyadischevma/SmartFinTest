@@ -20,9 +20,6 @@ import ru.dyadischevma.smartfintest.data.entity.Good;
 import ru.dyadischevma.smartfintest.data.enums.Country;
 
 public class TabFragment extends Fragment {
-
-    private TabViewModel mViewModel;
-
     private static final String COUNTRY_NAME = "param1";
 
     RecyclerView recyclerView;
@@ -67,7 +64,7 @@ public class TabFragment extends Fragment {
             countryName = Country.ALL.name;
         }
 
-        mViewModel = new ViewModelProvider(this).get(TabViewModel.class);
+        TabViewModel mViewModel = new ViewModelProvider(this).get(TabViewModel.class);
         mViewModel.getData(countryName).observe(getViewLifecycleOwner(), dataItems ->
         {
             if (dataItems != null) {

@@ -16,7 +16,7 @@ import ru.dyadischevma.smartfintest.R;
 import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
 
 public class ReceiptAdapter extends RecyclerView.Adapter<ReceiptAdapter.MyViewHolder> {
-    private DecimalFormat df = new DecimalFormat("0.00##");
+    private final DecimalFormat df = new DecimalFormat("0.00##");
     private List<ReceiptItem> receiptItemList;
 
     public void setListData(List<ReceiptItem> dataItemList) {

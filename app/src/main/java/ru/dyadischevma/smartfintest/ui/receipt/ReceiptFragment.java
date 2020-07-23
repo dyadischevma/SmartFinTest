@@ -1,22 +1,19 @@
 package ru.dyadischevma.smartfintest.ui.receipt;
 
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -41,7 +38,7 @@ public class ReceiptFragment extends Fragment {
     private TextView textViewReceiptTotal;
     private Button buttonReceiptPay;
 
-    DecimalFormat df = new DecimalFormat("0.00##");
+    private final DecimalFormat df = new DecimalFormat("0.00##");
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,

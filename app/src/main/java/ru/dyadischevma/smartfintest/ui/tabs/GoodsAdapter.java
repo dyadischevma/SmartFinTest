@@ -26,8 +26,8 @@ import ru.dyadischevma.smartfintest.data.repositories.DataRepository;
 
 public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.MyViewHolder> {
 
-    List<Good> goodsList;
-    Context context;
+    private List<Good> goodsList;
+    private Context context;
 
     public void setListData(List<Good> dataItemList) {
         if (goodsList == null) {

@@ -21,11 +21,7 @@ import ru.dyadischevma.smartfintest.data.enums.Country;
 import ru.dyadischevma.smartfintest.ui.tabs.ViewPagerAdapter;
 
 public class GoodsFragment extends Fragment {
-    ViewPagerAdapter viewPagerAdapter;
-    ViewPager2 viewPager;
-
-    ArrayList<String> tabs = Country.getCountryNames();
-
+    private final ArrayList<String> TABS = Country.getCountryNames();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,8 +30,8 @@ public class GoodsFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        viewPagerAdapter = new ViewPagerAdapter(this);
-        viewPager = view.findViewById(R.id.pager);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        ViewPager2 viewPager = view.findViewById(R.id.pager);
         viewPager.setAdapter(viewPagerAdapter);
 
         TabLayout tabLayout = view.findViewById(R.id.tab_layout);
@@ -43,8 +39,10 @@ public class GoodsFragment extends Fragment {
                 ContextCompat.getColor(view.getContext(), R.color.colorText),
                 ContextCompat.getColor(view.getContext(), R.color.colorSelectedText)
         );
-        new TabLayoutMediator(tabLayout, viewPager,
-                (tab, position) -> tab.setText(tabs.get(position))
+        new TabLayoutMediator(
+                tabLayout,
+                viewPager,
+                (tab, position) -> tab.setText(TABS.get(position))
         ).attach();
     }
 }

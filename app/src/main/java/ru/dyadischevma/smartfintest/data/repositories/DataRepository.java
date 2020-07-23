@@ -19,6 +19,7 @@ import ru.dyadischevma.smartfintest.data.entity.ReceiptItem;
 
 public class DataRepository {
     private static DataRepository INSTANCE;
+
     private DataDAO mDataDao;
     private MutableLiveData<ArrayList<ReceiptItem>> receipt = new MutableLiveData<>();
 
@@ -46,7 +47,7 @@ public class DataRepository {
     public Single<Long> insertItem(Good item) {
         return mDataDao.insertItem(item)
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+                .observeOn(AndroidSchedulers.mainThread()); //TODO use transforms
     }
 
     public LiveData<List<Good>> getAllGoods() {
